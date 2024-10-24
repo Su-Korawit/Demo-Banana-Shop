@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Additional CSS for the text beside the logo */
+        /* header {
+  display: flex;
+  align-items: center;
+} */
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            /* Adjust the margin as needed */
+        }
+
+        .logo-text {
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            color: black;
+            /* Set the color of the text */
+            margin: auto;
+            /* Center the text vertically */
+        }
+
+        ืnav {
+            justify-content: flex-end;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            /* ปรับระยะห่างระหว่างเมนู */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: none;
+            /* เพิ่มบรรทัดนี้เพื่อลบเส้นใต้ลิงก์ */
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+            /* ลบระยะห่างของเมนูแรก */
+        }
+
+
+        /* Banner styles */
+        banner {
+            padding-top: 25px;
+            background-image: url('banana_banner.jpg');
+            background-size: cover;
+            height: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* Section styles */
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 2px;
+        }
+
+        .column {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .circle-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            /* Add transition for smooth animation */
+        }
+
+        .circle-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Zoom effect on hover for the circle containing banana images */
+        .circle-container:hover {
+            transform: scale(1.1);
+            /* Zoom effect */
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 400px;
+            /* ปรับความสูงของภาพให้ใหญ่ขึ้น */
+            border-radius: 20px;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #8db600;
+            color: #fff;
+            padding: 20px;
+            height: 350px;
+            border-radius: 20px;
+        }
+
+        /* Footer styles */
+
+        footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        footer .column {
+            flex: 1;
+        }
+
+        footer .row:first-child {
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            padding-top: 20px;
+            width: 500px;
+            /* ปรับความกว้างของ iframe */
+            height: 300px;
+            /* ปรับความสูงของ iframe */
+            border-radius: 50px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            section {
+                flex-direction: column;
+                /* ให้ section เรียงแบบคอลัมน์เมื่อหน้าจอขนาดเล็ก */
+            }
+
+            .column {
+                width: 100%;
+                /* ให้ .column มีความกว้างเต็มขนาดของ section เมื่อหน้าจอขนาดเล็ก */
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            nav ul li {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+
+            banner {
+                font-size: 20px;
+            }
+
+            .circle-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            .circle-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .slideshow-container img {
+                height: 200px;
+                /* Adjust slideshow image height for smaller screens */
+            }
+
+            footer {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            footer .column {
+                flex: 1;
+                margin-bottom: 20px;
+                /* Add space between columns in smaller screens */
+            }
+
+            iframe {
+                width: 90%;
+                height: 300px;
+            }
+        }
+
+        /* Additional CSS for the fixed navigation bar */
+        header {
+            font-family: Charmonman;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffc107;
+            /* Yellow color */
+            z-index: 1000;
+            /* Ensure it's above other content */
+        }
+
+        body {
+            font-family: 'Charmonman', cursive;
+            padding-top: 60px;
+            /* Adjust body padding to prevent content from being hidden behind the fixed navbar */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Charmonman', cursive;
+        }
+
+        section {
+            padding-top: 30px;
+            /* Adjust section padding to offset for the fixed navbar */
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Banana Shop Logo">
+            <span class="logo-text">Banana Shop</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">หน้าหลัก</a></li>
+                <li style="padding-right: 25px;"><a href="#about">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <banner>
+        <h1>ยินดีต้อนรับสู่ ร้านบ้านกล้วย</h1>
+    </banner>
+
+    <section id="bananaSection">
+        <div class="column" onclick="goToInformation('banana1_info.html')">
+            <div class="circle-container">
+                <img src="banana1.jpg" alt="Banana 1">
+            </div>
+            <div class="name">กล้วยหอม</div>
+        </div>
+
+        <div class="column" onclick="goToInformation('banana2_info.html')">
+            <div class="circle-container">
+                <img src="banana2.jpg" alt="Banana 2">
+            </div>
+            <div class="name">กล้วยไข่</div>
+        </div>
+
+        <div class="column" onclick="goToInformation('banana3_info.html')">
+            <div class="circle-container">
+                <img src="banana3.jpg" alt="Banana 3">
+            </div>
+            <div class="name">กล้วยน้ำว้า</div>
+        </div>
+    </section>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container" id="about">
+        <img src="slideshow_image1.jpg" alt="Slideshow Image 1">
+        <img src="slideshow_image2.jpg" alt="Slideshow Image 2">
+        <img src="slideshow_image3.jpg" alt="Slideshow Image 3">
+    </div>
+
+    <footer>
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="column">
+                <h1>ติดต่อเรา:</h1>
+                <p>128/33 ม. 1 ต. บางเสาธง, อ. บางเสาธง, จ. สมุทรปราการ</p>
+                <p>โทร: 0972198155</p>
+            </div>
+            <div class="column">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123972.44886645518!2d100.46807380706177!3d13.830689145703165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e283736cf581bd%3A0xeb650d43c4ff0dba!2zNy1FbGV2ZW4g4Liq4Liy4LiC4LiyIOC5gOC4oeC4t-C4reC4h-C4l-C4reC4h-C4mOC4suC4meC4tSAo4LiWLuC4m-C5iuC4reC4m-C4m-C4ueC4peC5iOC4siAzKSAoMDc4MTMp!5e0!3m2!1sen!2sth!4v1710295487024!5m2!1sen!2sth"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="row">
+            <div class="column" style="color: black;">
+                <hr>
+                <p style="text-align: center;" alt="กรวิทย์ สุพร">ออกแบบและพัฒนาโดย นายกรวิทย์ สุพร</p>
+                <p style="text-align: center;">หากมีเนื้อหาไม่เหมาะสมหรือละเมิดลิขสิทธิ์ โปรดแจ้งที่ |
+                    o.korawitt@gmail.com | 09-7197-7296</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function goToInformation(page) {
+            window.location.href = page;
+        }
+
+        // Wait for 2 seconds before redirecting to the home page
+        setTimeout(function () {
+            // Check if the current URL doesn't contain any hash fragment (i.e., it's the initial page load)
+            if (!window.location.hash) {
+                // Redirect to the home page
+                window.location.href = "#home";
+            }
+        }, 10000);
+
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.column', {
+            duration: 1000, // Animation duration (in milliseconds)
+            origin: 'bottom', // Animation origin (you can change this to 'left', 'right', 'top', etc.)
+            distance: '50px', // Animation distance
+            delay: 300, // Delay between elements (in milliseconds)
+            easing: 'ease-in-out', // Animation easing
+            reset: true // Reset reveal when element is not in view
+        });
+
+        // Smooth scrolling to about section when About link is clicked
+        document.querySelector('nav ul li:nth-child(2) a').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Scroll to the section containing the circular images when the page loads
+        window.onload = function () {
+            document.getElementById('bananaSection').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // Slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slideshow-container img');
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        showSlides();
+    </script>
+
+</body>
+
+</html>
